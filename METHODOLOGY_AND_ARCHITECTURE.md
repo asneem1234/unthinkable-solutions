@@ -34,11 +34,16 @@ Traditional RAG systems face critical inefficiencies:
 
 #### 1.1.2 Research Foundation
 
-Our approach is inspired by **REFRAG** (Meta, 2025), which demonstrated:
+Our approach is inspired by **REFRAG** (Lin et al., 2025), which demonstrated:
 
-- **30.85× TTFT acceleration** through context compression
-- **Minimal accuracy loss** with intelligent chunk selection
-- **Block-diagonal attention patterns** in RAG contexts suggest redundant computation
+- **Significant TTFT (Time-To-First-Token) acceleration** through selective context compression
+- **Minimal accuracy loss** with intelligent chunk selection (maintaining 95-98% quality)
+- **Block-diagonal attention patterns** in RAG contexts reveal redundant computation
+- **Adaptive compression strategies** that preserve high-relevance information
+- **Efficient decoding** by treating less-relevant chunks as compressed representations
+
+**Key Insight from REFRAG:**  
+Not all retrieved context chunks contribute equally to answer generation. By selectively compressing lower-relevance chunks while preserving high-relevance chunks in full token form, we can dramatically reduce inference latency and cost while maintaining answer quality.
 
 #### 1.1.3 Hypothesis
 
@@ -47,6 +52,29 @@ Our approach is inspired by **REFRAG** (Meta, 2025), which demonstrated:
 ---
 
 ### 1.2 System Design Methodology
+
+#### 1.2.0 REFRAG-Inspired Approach
+
+**What is REFRAG?**  
+REFRAG (Rethinking RAG based Decoding) is a novel approach that rethinks how language models process retrieved contexts in RAG systems. Instead of treating all retrieved chunks equally, REFRAG introduces selective compression based on relevance.
+
+**Core REFRAG Principles:**
+1. **Selective Processing**: Not all retrieved context needs full attention
+2. **Relevance-Based Compression**: Compress low-relevance chunks, preserve high-relevance ones
+3. **Efficient Decoding**: Reduced computational overhead without sacrificing quality
+4. **Adaptive Strategy**: Compression ratio adjusts based on query complexity
+
+**Why REFRAG Matters:**
+- Traditional RAG: Process all retrieved tokens with quadratic attention cost
+- REFRAG Approach: Compress ~60-80% of context, maintain quality
+- Result: Faster inference, lower costs, scalable to larger document sets
+
+**Our Implementation:**  
+We adapt REFRAG's core principles to create a production-ready system with:
+- Hybrid retrieval for better initial ranking
+- Cross-encoder reranking for refined relevance scores
+- Selective compression based on cosine similarity thresholds
+- Comprehensive evaluation framework
 
 #### 1.2.1 Modular Architecture Approach
 
@@ -1299,30 +1327,77 @@ Hybrid Search Improvement:
 ### Primary Research
 
 [1] **REFRAG: Rethinking RAG based Decoding**  
-    Lin et al., Meta Superintelligence Labs, 2025  
-    https://arxiv.org/abs/2509.01092
+    Xiaoqiang Lin, Aritra Ghosh, Bryan Kian Hsiang Low, Anshumali Shrivastava, Vijai Mohan  
+    arXiv:2509.01092v1, 2025  
+    https://arxiv.org/abs/2509.01092  
+    https://doi.org/10.48550/arXiv.2509.01092  
+    
+    **Key Contributions:**
+    - Introduced selective compression for RAG contexts
+    - Demonstrated significant TTFT acceleration
+    - Block-diagonal attention pattern analysis
+    - Minimal accuracy trade-offs with compression
 
 ### Supporting Research
 
 [2] **Retrieval-Augmented Generation for Knowledge-Intensive NLP**  
-    Lewis et al., 2020
+    Patrick Lewis, Ethan Perez, Aleksandra Piktus, et al.  
+    NeurIPS 2020  
+    Foundation work on RAG architectures
 
 [3] **Sentence-BERT: Sentence Embeddings using Siamese BERT**  
-    Reimers & Gurevych, 2019
+    Nils Reimers, Iryna Gurevych  
+    EMNLP-IJCNLP 2019  
+    Semantic similarity and dense retrieval
 
 [4] **Dense Passage Retrieval for Open-Domain Question Answering**  
-    Karpukhin et al., 2020
+    Vladimir Karpukhin, Barlas Oğuz, Sewon Min, et al.  
+    EMNLP 2020  
+    Dense retrieval methodology
+
+[5] **Longformer: The Long-Document Transformer**  
+    Iz Beltagy, Matthew E. Peters, Arman Cohan  
+    Efficient attention mechanisms for long sequences
+
+[6] **Compressive Transformers for Long-Range Sequence Modelling**  
+    Jack W. Rae, Anna Potapenko, Siddhant M. Jayakumar, Timothy P. Lillicrap  
+    Context compression techniques
 
 ### Tools & Frameworks
 
-[5] **LangChain**: Building applications with LLMs  
-    https://langchain.com
+[7] **LangChain**: Building applications with LLMs  
+    https://langchain.com  
+    Framework for chaining LLM components
 
-[6] **ChromaDB**: The AI-native open-source vector database  
-    https://www.trychroma.com
+[8] **ChromaDB**: The AI-native open-source vector database  
+    https://www.trychroma.com  
+    Embedded vector database with persistence
 
-[7] **RAGAS**: Evaluation framework for RAG systems  
-    https://github.com/explodinggradients/ragas
+[9] **RAGAS**: Retrieval Augmented Generation Assessment  
+    https://github.com/explodinggradients/ragas  
+    Evaluation metrics for RAG systems
+
+[10] **Groq**: Ultra-fast AI inference  
+    https://groq.com  
+    LPU-based inference for high-speed generation
+
+### Related Work
+
+[11] **REPLUG: Retrieval-Augmented Black-Box Language Models**  
+    Weijia Shi et al., 2024  
+    Retrieval enhancement techniques
+
+[12] **RoBERTa: A Robustly Optimized BERT Pretraining Approach**  
+    Yinhan Liu et al., 2019  
+    Pre-trained encoder models
+
+[13] **Speculative Decoding**  
+    Yaniv Leviathan et al., 2023  
+    Fast inference techniques
+
+[14] **MS MARCO: A Human Generated MAchine Reading COmprehension Dataset**  
+    Microsoft Research  
+    Cross-encoder reranking models
 
 ---
 
