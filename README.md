@@ -166,35 +166,23 @@ We've exceeded the assignment requirements by implementing:
 
 ## Features
 
-### Core Functionality
-
-| Feature | Icon | Description |
-|---------|------|-------------|
-| **Multi-Format Document Processing** | 📄 | PDF, TXT, DOC, DOCX support with intelligent parsing |
-| **Semantic Search** | 🔍 | Vector-based similarity search powered by Qdrant |
-| **LLM Answer Generation** | 🤖 | Google Gemini 2.0 Flash for accurate, contextual responses |
-| **Vector Database** | 💾 | Efficient storage and retrieval with Qdrant |
-| **Smart Chunking** | 🎯 | Context-aware document segmentation with overlap |
-
-### Advanced Features
-
-| Feature | Icon | Description |
-|---------|------|-------------|
-| **ReFRAG Compression** | 🗜️ | Meta AI's methodology for 60-70% token reduction |
-| **Comparison Mode** | ⚖️ | Side-by-side evaluation of Standard vs ReFRAG |
-| **Performance Metrics** | 📊 | Real-time tracking of tokens, latency, and cost |
-| **Dual Vector Store** | 🔄 | Support for both Qdrant and ChromaDB |
-| **Intelligent Context Selection** | ✨ | Top-3 full + compressed remaining documents |
-
-### User Experience
-
-| Feature | Icon | Description |
-|---------|------|-------------|
-| **Modern UI** | 🎨 | Beautiful sky-blue & pink gradient design |
-| **Responsive Design** | 📱 | Works seamlessly on all devices |
-| **Quick Start Guide** | 🚀 | Step-by-step instructions for new users |
-| **Query History** | 📜 | Track and revisit previous searches |
-| **Source Citations** | 💡 | View document sources for transparency |
+| Feature | Description |
+|---------|-------------|
+| **Multi-Format Document Processing** | PDF, TXT, DOC, DOCX support with intelligent parsing |
+| **Semantic Search** | Vector-based similarity search powered by Qdrant |
+| **LLM Answer Generation** | Google Gemini 2.0 Flash for accurate, contextual responses |
+| **Vector Database** | Efficient storage and retrieval with Qdrant |
+| **Smart Chunking** | Context-aware document segmentation with overlap |
+| **ReFRAG Compression** | Meta AI's methodology for 60-70% token reduction |
+| **Comparison Mode** | Side-by-side evaluation of Standard vs ReFRAG |
+| **Performance Metrics** | Real-time tracking of tokens, latency, and cost |
+| **Dual Vector Store** | Support for both Qdrant and ChromaDB |
+| **Intelligent Context Selection** | Top-3 full + compressed remaining documents |
+| **Modern UI** | Beautiful sky-blue & pink gradient design |
+| **Responsive Design** | Works seamlessly on all devices |
+| **Quick Start Guide** | Step-by-step instructions for new users |
+| **Query History** | Track and revisit previous searches |
+| **Source Citations** | View document sources for transparency |
 
 ---
 
