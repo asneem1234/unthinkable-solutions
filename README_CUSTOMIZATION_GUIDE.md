@@ -12,17 +12,12 @@ Before submitting your project, please replace the following placeholders in `RE
    - Where to find: After deploying to Vercel
    - Occurrences: Multiple places throughout README
 
-2. **YOUR_VIDEO_DEMO_LINK**
-   - Replace with: Your YouTube/Loom/Drive video link
-   - Example: `https://youtu.be/abc123xyz` or `https://www.loom.com/share/abc123`
-   - Where to find: After uploading your demo video
-   - Occurrences: Video demo sections
-
-3. **YOUR_VIDEO_ID**
-   - Replace with: YouTube video ID (only if using YouTube)
+2. **YOUR_VIDEO_ID**
+   - Replace with: YouTube video ID (REQUIRED for embedded video)
    - Example: If URL is `https://youtu.be/dQw4w9WgXcQ`, ID is `dQw4w9WgXcQ`
-   - Where to find: In your YouTube URL
-   - Location: Video thumbnail section
+   - Where to find: In your YouTube URL (the part after `v=` or after `youtu.be/`)
+   - Location: Video demo section (appears twice - thumbnail and embed)
+   - **Important:** This will make the video viewable directly in GitHub!
 
 ### 👤 Personal Information
 
@@ -48,17 +43,12 @@ Find:    YOUR_VERCEL_DEPLOYMENT_URL
 Replace: https://your-actual-deployment.vercel.app
 ```
 
-### Step 2: Replace Video Link
-```
-Find:    YOUR_VIDEO_DEMO_LINK
-Replace: https://youtu.be/your-video-id
-```
-
-### Step 3: Replace Video ID (for thumbnail)
+### Step 2: Replace Video ID (for embedded video and thumbnail)
 ```
 Find:    YOUR_VIDEO_ID
 Replace: your-youtube-video-id
 ```
+**Example:** If your video URL is `https://youtu.be/dQw4w9WgXcQ`, replace with `dQw4w9WgXcQ`
 
 ### Step 4: Add Email
 ```

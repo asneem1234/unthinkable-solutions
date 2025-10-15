@@ -31,26 +31,55 @@
 
 ## 🎥 Demo
 
+### � Submission Details
+
+| Field | Information |
+|-------|-------------|
+| **Name** | ASNEEM ATHAR SHAIK |
+| **Registration No.** | 22BCE8807 |
+| **Task Name** | Knowledge Base Search Engine |
+| **Live Demo** | [🚀 Try the Application](YOUR_VERCEL_DEPLOYMENT_URL) |
+
+---
+
 ### 📹 Video Demonstration
-> **Watch the complete walkthrough of the system:**
 
-<!-- Replace YOUR_VIDEO_ID with your YouTube video ID (the part after v= in the URL) -->
-[![Video Demo Thumbnail](https://img.youtube.com/vi/YOUR_VIDEO_ID/maxresdefault.jpg)](YOUR_VIDEO_DEMO_LINK)
+<div align="center">
 
-👉 **[Watch Full Video Demo](YOUR_VIDEO_DEMO_LINK)** ⭐
+**🎬 Complete Project Walkthrough**
 
-**What's covered in the video:**
-- 📤 Document upload and processing
-- 🔍 Semantic search demonstration
-- 🤖 RAG-based question answering
-- ⚖️ Comparison mode (Standard vs ReFRAG)
-- 📊 Performance metrics analysis
-- 🏗️ Architecture walkthrough
+<!-- Replace YOUR_VIDEO_ID with your actual YouTube video ID -->
+<a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID">
+  <img src="https://img.youtube.com/vi/YOUR_VIDEO_ID/maxresdefault.jpg" alt="Video Demo" width="800">
+</a>
 
-### 🌐 Live Application
-- **Landing Page:** [View Project Overview](YOUR_VERCEL_DEPLOYMENT_URL/landing.html)
-- **Live Demo:** [Try the Application](YOUR_VERCEL_DEPLOYMENT_URL)
-- **Architecture:** [System Architecture Details](YOUR_VERCEL_DEPLOYMENT_URL/architecture.html)
+**Or watch embedded below:**
+
+</div>
+
+<!-- Embedded YouTube Video -->
+```
+https://www.youtube.com/embed/YOUR_VIDEO_ID
+```
+
+> 💡 **Tip:** Replace `YOUR_VIDEO_ID` above with your actual YouTube video ID (e.g., if your URL is `https://youtu.be/dQw4w9WgXcQ`, the ID is `dQw4w9WgXcQ`)
+
+**📝 What's covered in the video:**
+- 📤 Document upload and processing demonstration
+- 🔍 Semantic search capabilities
+- 🤖 RAG-based question answering with ReFRAG
+- ⚖️ Performance comparison mode (Standard vs ReFRAG)
+- 📊 Real-time performance metrics analysis
+- 🏗️ System architecture walkthrough
+- 💡 Key features and innovations
+
+---
+
+### 🌐 Application Links
+- **🏠 Landing Page:** [View Project Overview](YOUR_VERCEL_DEPLOYMENT_URL/landing.html)
+- **🚀 Live Demo:** [Try the Application](YOUR_VERCEL_DEPLOYMENT_URL)
+- **🏗️ Architecture:** [System Architecture Details](YOUR_VERCEL_DEPLOYMENT_URL/architecture.html)
+- **💻 Source Code:** [GitHub Repository](https://github.com/asneem1234/walmart_hackathon_project)
 
 ---
 
