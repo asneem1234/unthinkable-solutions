@@ -11,10 +11,10 @@
 - YOUR_LINKEDIN_PROFILE: Your LinkedIn profile URL
 -->
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-38bdf8?style=for-the-badge&logo=vercel)](YOUR_VERCEL_DEPLOYMENT_URL)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-38bdf8?style=for-the-badge&logo=vercel)](https://unthinkable-solutions.vercel.app)
 [![Video Demo](https://img.shields.io/badge/Video-Demo-ec4899?style=for-the-badge&logo=youtube)](YOUR_VIDEO_DEMO_LINK)
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/asneem1234/unthinkable-solutions)
-[![Architecture](https://img.shields.io/badge/View-Architecture-38bdf8?style=for-the-badge&logo=diagram)](YOUR_VERCEL_DEPLOYMENT_URL/architecture.html)
+[![Architecture](https://img.shields.io/badge/View-Architecture-38bdf8?style=for-the-badge&logo=diagram)](https://unthinkable-solutions.vercel.app/architecture.html)
 
 **Placement Drive Assignment - Challenge #7**  
 **Unthinkable Solutions**
@@ -36,7 +36,7 @@
 | **Name** | ASNEEM ATHAR SHAIK |
 | **Registration No.** | 22BCE8807 |
 | **Task Name** | Task 7 - Knowledge Base Search Engine |
-| **Live Demo** | [Try the Application](YOUR_VERCEL_DEPLOYMENT_URL) |
+| **Live Demo** | [Try the Application](https://unthinkable-solutions.vercel.app) |
 
 ---
 
@@ -349,64 +349,21 @@ We've implemented Meta AI Research's recently published **ReFRAG (Refinement thr
 
 ## Tech Stack
 
-### Backend & API
-
-| Technology | Version/Type | Purpose | Features |
-|------------|-------------|---------|----------|
-| **Node.js** | v18+ | JavaScript runtime environment | Async I/O, event-driven architecture |
-| **Express.js** | Latest | Web application framework | Fast, minimalist, middleware support |
-| **RESTful API** | Architecture pattern | API design | Stateless, scalable endpoints |
-| **Multer** | File upload middleware | Document handling | Multipart form data processing |
-
-### AI & Machine Learning
-
-| Component | Technology | Specifications | Use Case |
-|-----------|-----------|----------------|----------|
-| **LLM** | Google Gemini 2.0 Flash | Latest multimodal model | Answer synthesis, context understanding |
-| **Embeddings** | Transformers.js (Xenova/all-MiniLM-L6-v2) | 384 dimensions, CPU-optimized | Semantic text representation |
-| **Vector Database** | Qdrant | High-performance similarity search | Vector storage & retrieval |
-| **Fallback Database** | ChromaDB | SQLite-based | Local development & backup |
-| **RAG Method** | ReFRAG (Meta AI Research 2024) | 60-70% token compression | Optimized context retrieval |
-
-### Document Processing
-
-| Format | Library | Capabilities | Performance |
-|--------|---------|--------------|-------------|
-| **PDF** | pdf-parse | Text extraction, metadata parsing | Fast, supports complex layouts |
-| **Word Documents** | mammoth | DOCX to HTML/text conversion | Style preservation, table support |
-| **Text Files** | Native Node.js (fs) | Direct file reading | Ultra-fast, no dependencies |
-| **Chunking** | Custom algorithm | Semantic segmentation with overlap | Context-aware, configurable |
-
-### Frontend
-
-| Component | Technology | Details | Purpose |
-|-----------|-----------|---------|---------|
-| **UI Framework** | Vanilla JavaScript | ES6+, async/await | Lightweight, no build process |
-| **Markup** | HTML5 | Semantic elements | Accessibility, SEO-friendly |
-| **Styling** | CSS3 | Custom properties, flexbox, grid | Responsive, modern design |
-| **Color Scheme** | Sky Blue (#38bdf8) & Pink (#ec4899) | Gradient themes | Professional, eye-catching |
-| **Icons** | Font Awesome 6.4.0 | 2000+ vector icons | Consistent visual language |
-| **Typography** | Google Fonts (Inter) | Variable font | Clean, modern readability |
-| **UI Components** | Custom-built | Modals, cards, animations | Tailored user experience |
-
-### Deployment & DevOps
-
-| Service | Technology | Configuration | Benefits |
-|---------|-----------|---------------|----------|
-| **Hosting** | Vercel | Serverless functions, edge network | Zero-config, auto-scaling |
-| **API Routes** | Vercel Serverless | Node.js runtime | Pay-per-use, global CDN |
-| **Version Control** | Git & GitHub | Main branch deployment | CI/CD, collaboration |
-| **Environment** | dotenv | Secure config management | API key protection |
-| **Monitoring** | Built-in logging | Console & error tracking | Debugging, performance insights |
-
-### Development Tools
-
-| Tool | Purpose | Features |
-|------|---------|----------|
-| **npm** | Package management | Dependency tracking, scripts |
-| **nodemon** | Development server | Auto-reload on file changes |
-| **ESLint** | Code quality | Linting, style consistency |
-| **Postman** | API testing | Endpoint validation |
+| Category | Technology | Purpose |
+|----------|-----------|---------|
+| **Backend** | Node.js v18+ | Server runtime |
+| **Framework** | Express.js | RESTful API |
+| **LLM** | Google Gemini 2.0 Flash | Answer generation |
+| **Embeddings** | Transformers.js (MiniLM-L6-v2) | Text to vectors (384D) |
+| **Vector DB** | Qdrant | Semantic search |
+| **RAG Method** | ReFRAG (Meta AI 2024) | 60-70% token compression |
+| **Document Parsing** | pdf-parse, mammoth | PDF, DOCX, TXT support |
+| **Frontend** | HTML5, CSS3, Vanilla JS | Modern responsive UI |
+| **Styling** | Sky Blue & Pink gradient | Professional design |
+| **Icons** | Font Awesome 6.4.0 | Vector icons |
+| **Deployment** | Vercel | Serverless hosting |
+| **Version Control** | Git & GitHub | Code management |
+| **Dev Tools** | npm, nodemon, ESLint | Development & testing |
 
 ---
 
@@ -752,18 +709,7 @@ This project addresses all evaluation focus areas as outlined in the assignment 
 
 ## License
 
-This project is licensed under the **MIT License**.
-
-| Permission | Status | Description |
-|------------|--------|-------------|
-| ✅ **Commercial Use** | Allowed | Use this project for commercial purposes |
-| ✅ **Modification** | Allowed | Modify and adapt the code |
-| ✅ **Distribution** | Allowed | Distribute original or modified versions |
-| ✅ **Private Use** | Allowed | Use privately without restrictions |
-| ❌ **Liability** | Not Provided | No liability for damages or issues |
-| ❌ **Warranty** | Not Provided | No warranty or guarantees |
-
-For complete license terms, see the [LICENSE](LICENSE) file in the repository.
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
 
 ---
 
