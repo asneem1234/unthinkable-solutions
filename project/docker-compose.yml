@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  # ChromaDB Vector Database
+  chromadb:
+    image: chromadb/chroma:latest
+    container_name: chromadb
+    ports:
+      - "8000:8000"
+    volumes:
+      - chroma_data:/chroma/chroma
+    environment:
+      - IS_PERSISTENT=TRUE
+      - ANONYMIZED_TELEMETRY=TRUE
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/heartbeat"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - rag-network
+
+  # Node.js Application
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rag-app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - CHROMA_HOST=chromadb
+      - CHROMA_PORT=8000
+      - CHROMA_SSL=false
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - CHUNK_SIZE=512
+      - CHUNK_OVERLAP=100
+    depends_on:
+      chromadb:
+        condition: service_healthy
+    networks:
+      - rag-network
+    restart: unless-stopped
+
+volumes:
+  chroma_data:
+    driver: local
+
+networks:
+  rag-network:
+    driver: bridge

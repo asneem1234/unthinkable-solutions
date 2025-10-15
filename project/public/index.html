@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REFRAG RAG System</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <div>
+                    <h1>🚀 REFRAG-Inspired RAG System</h1>
+                    <p class="subtitle">Selective Compression for Efficient Retrieval-Augmented Generation</p>
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <a href="/" style="padding: 10px 20px; background: #6366f1; color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">← Home</a>
+                    <a href="architecture.html" style="padding: 10px 20px; background: #8b5cf6; color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">🏗️ Architecture</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Left Panel: Upload & Documents -->
+            <div class="left-panel">
+                <section class="card upload-section">
+                    <h2>📁 Upload Documents</h2>
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-icon">📄</div>
+                        <p>Drag & drop or click to upload</p>
+                        <p class="upload-hint">Supported: PDF, TXT</p>
+                        <input type="file" id="fileInput" accept=".pdf,.txt" multiple hidden>
+                    </div>
+                    <button class="btn btn-primary" id="uploadBtn">
+                        <span class="btn-icon">⬆️</span> Upload Files
+                    </button>
+                    <div class="upload-status" id="uploadStatus"></div>
+                </section>
+
+                <section class="card documents-section">
+                    <div class="section-header">
+                        <h2>📚 Indexed Documents</h2>
+                        <button class="btn btn-secondary btn-small" id="refreshDocsBtn">🔄</button>
+                    </div>
+                    <div class="documents-list" id="documentsList">
+                        <div class="loading">Loading documents...</div>
+                    </div>
+                    <button class="btn btn-danger btn-small" id="clearAllBtn">
+                        <span class="btn-icon">🗑️</span> Clear All
+                    </button>
+                </section>
+
+                <section class="card metrics-section">
+                    <h2>📊 System Metrics</h2>
+                    <div class="metrics-grid" id="metricsGrid">
+                        <div class="metric-item">
+                            <div class="metric-value">0</div>
+                            <div class="metric-label">Total Queries</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">0</div>
+                            <div class="metric-label">Documents</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">0ms</div>
+                            <div class="metric-label">Avg Latency</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">0</div>
+                            <div class="metric-label">Total Tokens</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Panel: Query Interface -->
+            <div class="right-panel">
+                <section class="card query-section">
+                    <h2>💬 Ask a Question</h2>
+                    
+                    <div class="query-controls">
+                        <div class="mode-selector">
+                            <label>
+                                <input type="radio" name="queryMode" value="compressed" checked>
+                                <span class="mode-label">
+                                    <strong>REFRAG Compressed</strong>
+                                    <small>Faster, more efficient</small>
+                                </span>
+                            </label>
+                            <label>
+                                <input type="radio" name="queryMode" value="baseline">
+                                <span class="mode-label">
+                                    <strong>Baseline RAG</strong>
+                                    <small>Traditional approach</small>
+                                </span>
+                            </label>
+                            <label>
+                                <input type="radio" name="queryMode" value="compare">
+                                <span class="mode-label">
+                                    <strong>Compare Both</strong>
+                                    <small>Side-by-side analysis</small>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <textarea 
+                        id="queryInput" 
+                        placeholder="Enter your question here..."
+                        rows="4"
+                    ></textarea>
+
+                    <button class="btn btn-primary btn-large" id="queryBtn">
+                        <span class="btn-icon">🔍</span> Query
+                    </button>
+                </section>
+
+                <section class="card results-section" id="resultsSection" style="display: none;">
+                    <div class="section-header">
+                        <h2>📋 Results</h2>
+                        <button class="btn btn-secondary btn-small" id="clearResultsBtn">Clear</button>
+                    </div>
+                    
+                    <div id="resultsContainer">
+                        <!-- Results will be inserted here -->
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+        <div class="spinner"></div>
+        <p>Processing...</p>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
