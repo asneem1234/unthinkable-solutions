@@ -18,9 +18,11 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Configure multer for file uploads
+// Use /tmp directory for serverless environments (Vercel)
+const uploadDir = process.env.VERCEL ? '/tmp/uploads' : './uploads';
+
 const storage = multer.diskStorage({
   destination: async (req, file, cb) => {
-    const uploadDir = './uploads';
     try {
       await fs.mkdir(uploadDir, { recursive: true });
       cb(null, uploadDir);
