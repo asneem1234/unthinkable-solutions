@@ -13,7 +13,7 @@
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-38bdf8?style=for-the-badge&logo=vercel)](YOUR_VERCEL_DEPLOYMENT_URL)
 [![Video Demo](https://img.shields.io/badge/Video-Demo-ec4899?style=for-the-badge&logo=youtube)](YOUR_VIDEO_DEMO_LINK)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/asneem1234/walmart_hackathon_project)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/asneem1234/unthinkable-solutions)
 [![Architecture](https://img.shields.io/badge/View-Architecture-38bdf8?style=for-the-badge&logo=diagram)](YOUR_VERCEL_DEPLOYMENT_URL/architecture.html)
 
 **Placement Drive Assignment - Challenge #7**  
@@ -35,7 +35,7 @@
 |-------|-------------|
 | **Name** | ASNEEM ATHAR SHAIK |
 | **Registration No.** | 22BCE8807 |
-| **Task Name** | Knowledge Base Search Engine |
+| **Task Name** | Task 12 - Knowledge Base Search Engine |
 | **Live Demo** | [Try the Application](YOUR_VERCEL_DEPLOYMENT_URL) |
 
 ---
@@ -62,51 +62,31 @@ https://www.youtube.com/embed/YOUR_VIDEO_ID
 
 > **Note:** Replace `YOUR_VIDEO_ID` above with your actual YouTube video ID (e.g., if your URL is `https://youtu.be/dQw4w9WgXcQ`, the ID is `dQw4w9WgXcQ`)
 
-**What's covered in the video:**
-- Document upload and processing demonstration
-- Semantic search capabilities
-- RAG-based question answering with ReFRAG
-- Performance comparison mode (Standard vs ReFRAG)
-- Real-time performance metrics analysis
-- System architecture walkthrough
-- Key features and innovations
-
----
-
-## Application Links
-- **Landing Page:** [View Project Overview](YOUR_VERCEL_DEPLOYMENT_URL/landing.html)
-- **Live Demo:** [Try the Application](YOUR_VERCEL_DEPLOYMENT_URL)
-- **Architecture:** [System Architecture Details](YOUR_VERCEL_DEPLOYMENT_URL/architecture.html)
-- **Source Code:** [GitHub Repository](https://github.com/asneem1234/walmart_hackathon_project)
-
 ---
 
 ## Table of Contents
 
-1. [Submission Details](#submission-details)
-2. [Video Demonstration](#video-demonstration)
-3. [Application Links](#application-links)
-4. [Project Overview](#project-overview)
-5. [Features](#features)
-6. [What Makes This Special](#what-makes-this-special)
-7. [Tech Stack](#tech-stack)
-8. [Performance Metrics](#performance-metrics)
-9. [Prerequisites](#prerequisites)
-10. [Installation](#installation)
-11. [Configuration](#configuration)
-12. [Usage](#usage)
-13. [API Endpoints](#api-endpoints)
-14. [Project Structure](#project-structure)
-15. [How It Works](#how-it-works)
-16. [Advanced Features](#advanced-features)
-17. [Testing](#testing)
-18. [Deployment](#deployment)
-19. [Links & Resources](#links--resources)
-20. [Contact](#contact)
-21. [Evaluation Criteria Checklist](#evaluation-criteria-checklist)
-22. [Project Highlights](#project-highlights)
-23. [Acknowledgments](#acknowledgments)
-24. [License](#license)
+1. [Project Overview](#project-overview)
+2. [Features](#features)
+3. [Advanced Features](#advanced-features)
+4. [How It Works](#how-it-works)
+5. [What Makes This Special](#what-makes-this-special)
+6. [Tech Stack](#tech-stack)
+7. [Performance Metrics](#performance-metrics)
+8. [Prerequisites](#prerequisites)
+9. [Installation](#installation)
+10. [Configuration](#configuration)
+11. [Usage](#usage)
+12. [API Endpoints](#api-endpoints)
+13. [Project Structure](#project-structure)
+14. [Testing](#testing)
+15. [Deployment](#deployment)
+16. [Links & Resources](#links--resources)
+17. [Contact](#contact)
+18. [Evaluation Criteria Checklist](#evaluation-criteria-checklist)
+19. [Project Highlights](#project-highlights)
+20. [Acknowledgments](#acknowledgments)
+21. [License](#license)
 
 ---
 
@@ -157,6 +137,104 @@ We've exceeded the assignment requirements by implementing:
 
 ---
 
+## Advanced Features
+
+### Chunking Strategy
+- **Chunk Size**: 1000 characters (configurable)
+- **Overlap**: 200 characters to maintain context
+- **Smart Splitting**: Respects sentence boundaries
+
+### Embedding Model
+- **Model**: `Xenova/all-MiniLM-L6-v2`
+- **Dimensions**: 384
+- **Max Tokens**: 512
+- **Performance**: Fast inference on CPU
+
+### Vector Search
+- **Similarity Metric**: Cosine similarity
+- **Top-K**: Configurable result count
+- **Score Threshold**: 0.7 (default)
+
+---
+
+## How It Works
+
+### Document Ingestion Flow
+```mermaid
+graph LR
+    A[📄 Upload Document] --> B[🔍 Parse Content]
+    B --> C[✂️ Split into Chunks]
+    C --> D[🧮 Generate Embeddings]
+    D --> E[💾 Store in Qdrant]
+```
+
+**Step-by-Step:**
+1. **Upload** - User uploads PDF/TXT/DOC files via web interface
+2. **Parse** - Document processor extracts text content
+3. **Chunk** - Text split into 500-character chunks with 50-char overlap
+4. **Embed** - Each chunk converted to 384-dimensional vectors
+5. **Store** - Vectors stored in Qdrant with metadata
+
+### Query Processing Flow (ReFRAG)
+```mermaid
+graph TB
+    A[❓ User Query] --> B[🧮 Generate Query Embedding]
+    B --> C[🔍 Retrieve Top-10 Documents]
+    C --> D{ReFRAG Processing}
+    D --> E[📑 Keep Top-3 Full]
+    D --> F[🗜️ Compress Remaining 7]
+    E --> G[🔀 Merge Context]
+    F --> G
+    G --> H[🤖 Send to Gemini LLM]
+    H --> I[✨ Generate Answer]
+```
+
+**Step-by-Step:**
+1. **Query** - User submits natural language question
+2. **Embed** - Query converted to vector embedding
+3. **Retrieve** - Top-10 most similar chunks fetched from Qdrant
+4. **ReFRAG Processing:**
+   - Keep top-3 documents in full (highest similarity)
+   - Compress remaining 7 documents by 90% (semantic compression)
+5. **Merge** - Combine full + compressed context
+6. **Generate** - Send optimized context to Gemini for answer synthesis
+7. **Display** - Show answer with sources and performance metrics
+
+### Key Components
+
+#### 1. **Document Processor** (`documentProcessor.js`)
+- Multi-format support (PDF, TXT, DOC, DOCX)
+- Smart text extraction
+- Semantic chunking with overlap
+- Metadata preservation
+
+#### 2. **Embedding Service** (`embeddingService.js`)
+- Transformers.js integration
+- MiniLM-L6-v2 model (384 dimensions)
+- Batch processing support
+- CPU-optimized inference
+
+#### 3. **Qdrant Service** (`qdrantService.js`)
+- Vector storage and retrieval
+- Similarity search (cosine)
+- Collection management
+- Efficient indexing
+
+#### 4. **Compression Service** (`compressionService.js`)
+- ReFRAG implementation
+- Semantic text compression
+- Context optimization
+- Token reduction (70%+)
+
+#### 5. **RAG Service** (`ragService.js`)
+- Query orchestration
+- Context building
+- LLM integration (Gemini)
+- Answer synthesis
+- Comparison mode support
+
+---
+
 ## What Makes This Special
 
 ### 1. ReFRAG Implementation
@@ -183,18 +261,6 @@ We've implemented Meta AI Research's recently published **ReFRAG (Refinement thr
 - **Architecture Page**: Detailed technical documentation
 - **Demo Video**: Complete walkthrough
 - **GitHub Repository**: Well-organized codebase
-
----
-
-## Performance Metrics
-
-| Metric | Standard RAG | ReFRAG (Ours) | Improvement |
-|--------|--------------|---------------|-------------|
-| **Token Usage** | ~3000 tokens | ~900 tokens | 🎯 **70% reduction** |
-| **Processing Time** | 4-6 seconds | 1.5-2 seconds | ⚡ **2-3x faster** |
-| **API Cost** | $0.015/query | $0.005/query | 💰 **66% savings** |
-| **Accuracy** | 93-95% | 94-96% | ✅ **Maintained/Improved** |
-| **Context Quality** | Mixed relevance | High relevance | 🎯 **Optimized** |
 
 ---
 
@@ -227,6 +293,18 @@ We've implemented Meta AI Research's recently published **ReFRAG (Refinement thr
 - **Hosting:** Vercel (Serverless)
 - **Version Control:** Git & GitHub
 - **Environment:** dotenv for configuration
+
+---
+
+## Performance Metrics
+
+| Metric | Standard RAG | ReFRAG (Ours) | Improvement |
+|--------|--------------|---------------|-------------|
+| **Token Usage** | ~3000 tokens | ~900 tokens | 🎯 **70% reduction** |
+| **Processing Time** | 4-6 seconds | 1.5-2 seconds | ⚡ **2-3x faster** |
+| **API Cost** | $0.015/query | $0.005/query | 💰 **66% savings** |
+| **Accuracy** | 93-95% | 94-96% | ✅ **Maintained/Improved** |
+| **Context Quality** | Mixed relevance | High relevance | 🎯 **Optimized** |
 
 ---
 
@@ -421,103 +499,9 @@ unthinkable-solutions/
 └── README.md              # This file
 ```
 
-## How It Works
-
-### Document Ingestion Flow
-```mermaid
-graph LR
-    A[📄 Upload Document] --> B[🔍 Parse Content]
-    B --> C[✂️ Split into Chunks]
-    C --> D[🧮 Generate Embeddings]
-    D --> E[💾 Store in Qdrant]
-```
-
-**Step-by-Step:**
-1. **Upload** - User uploads PDF/TXT/DOC files via web interface
-2. **Parse** - Document processor extracts text content
-3. **Chunk** - Text split into 500-character chunks with 50-char overlap
-4. **Embed** - Each chunk converted to 384-dimensional vectors
-5. **Store** - Vectors stored in Qdrant with metadata
-
-### Query Processing Flow (ReFRAG)
-```mermaid
-graph TB
-    A[❓ User Query] --> B[🧮 Generate Query Embedding]
-    B --> C[🔍 Retrieve Top-10 Documents]
-    C --> D{ReFRAG Processing}
-    D --> E[📑 Keep Top-3 Full]
-    D --> F[🗜️ Compress Remaining 7]
-    E --> G[🔀 Merge Context]
-    F --> G
-    G --> H[🤖 Send to Gemini LLM]
-    H --> I[✨ Generate Answer]
-```
-
-**Step-by-Step:**
-1. **Query** - User submits natural language question
-2. **Embed** - Query converted to vector embedding
-3. **Retrieve** - Top-10 most similar chunks fetched from Qdrant
-4. **ReFRAG Processing:**
-   - Keep top-3 documents in full (highest similarity)
-   - Compress remaining 7 documents by 90% (semantic compression)
-5. **Merge** - Combine full + compressed context
-6. **Generate** - Send optimized context to Gemini for answer synthesis
-7. **Display** - Show answer with sources and performance metrics
-
-### Key Components
-
-#### 1. **Document Processor** (`documentProcessor.js`)
-- Multi-format support (PDF, TXT, DOC, DOCX)
-- Smart text extraction
-- Semantic chunking with overlap
-- Metadata preservation
-
-#### 2. **Embedding Service** (`embeddingService.js`)
-- Transformers.js integration
-- MiniLM-L6-v2 model (384 dimensions)
-- Batch processing support
-- CPU-optimized inference
-
-#### 3. **Qdrant Service** (`qdrantService.js`)
-- Vector storage and retrieval
-- Similarity search (cosine)
-- Collection management
-- Efficient indexing
-
-#### 4. **Compression Service** (`compressionService.js`)
-- ReFRAG implementation
-- Semantic text compression
-- Context optimization
-- Token reduction (70%+)
-
-#### 5. **RAG Service** (`ragService.js`)
-- Query orchestration
-- Context building
-- LLM integration (Gemini)
-- Answer synthesis
-- Comparison mode support
-
 ---
 
-## 🔍 Advanced Features
-
-### Chunking Strategy
-- **Chunk Size**: 1000 characters (configurable)
-- **Overlap**: 200 characters to maintain context
-- **Smart Splitting**: Respects sentence boundaries
-
-### Embedding Model
-- **Model**: `Xenova/all-MiniLM-L6-v2`
-- **Dimensions**: 384
-- **Max Tokens**: 512
-- **Performance**: Fast inference on CPU
-
-### Vector Search
-- **Similarity Metric**: Cosine similarity
-- **Top-K**: Configurable result count
-- **Score Threshold**: 0.7 (default)
-
-## 🧪 Testing
+## Testing
 
 Run connection tests:
 ```bash
@@ -528,6 +512,8 @@ Check model availability:
 ```bash
 node check-models.js
 ```
+
+---
 
 ## Deployment
 
@@ -562,27 +548,6 @@ node check-models.js
 
 For detailed deployment instructions, see [VERCEL_DEPLOYMENT.md](VERCEL_DEPLOYMENT.md)
 
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [Qdrant](https://qdrant.tech/) - Vector database
-- [Google Gemini](https://deepmind.google/technologies/gemini/) - AI model
-- [Hugging Face](https://huggingface.co/) - Transformer models
-- [Xenova Transformers](https://huggingface.co/Xenova) - JavaScript ML library
-
 ---
 
 ## Links & Resources
@@ -592,7 +557,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **🚀 Live Demo:** [Try the Application](YOUR_VERCEL_DEPLOYMENT_URL)
 - **🏗️ Architecture:** [System Design & Diagrams](YOUR_VERCEL_DEPLOYMENT_URL/architecture.html)
 - **📹 Video Demo:** [Watch Walkthrough](YOUR_VIDEO_DEMO_LINK)
-- **💻 GitHub Repo:** [Source Code](https://github.com/asneem1234/walmart_hackathon_project)
+- **💻 GitHub Repo:** [Source Code](https://github.com/asneem1234/unthinkable-solutions)
 
 ### 📚 Documentation
 - **README:** You're reading it! 📖
@@ -618,13 +583,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### Developer Information
 - **GitHub:** [@asneem1234](https://github.com/asneem1234)
-- **Repository:** [walmart_hackathon_project](https://github.com/asneem1234/walmart_hackathon_project)
-- **Email:** [YOUR_EMAIL_HERE]
-- **LinkedIn:** [YOUR_LINKEDIN_PROFILE_HERE]
+- **Repository:** [unthinkable-solutions](https://github.com/asneem1234/unthinkable-solutions)
+- **Email:** [atharasneemshaik@gmail.com](mailto:atharasneemshaik@gmail.com)
+- **Portfolio:** [asneemshaik.com](https://www.asneemshaik.com/)
+- **LinkedIn:** [Asneem Athar Shaik](https://www.linkedin.com/in/asneem-athar-shaik-893502209/)
 
 ### Support
-- 🐛 **Bug Reports:** [Open an Issue](https://github.com/asneem1234/walmart_hackathon_project/issues)
-- 💡 **Feature Requests:** [Create a Feature Request](https://github.com/asneem1234/walmart_hackathon_project/issues/new)
+- 🐛 **Bug Reports:** [Open an Issue](https://github.com/asneem1234/unthinkable-solutions/issues)
+- 💡 **Feature Requests:** [Create a Feature Request](https://github.com/asneem1234/unthinkable-solutions/issues/new)
 - 📖 **Documentation:** Check the guides in the repository
 - 💬 **Questions:** Open a GitHub Discussion
 
@@ -697,7 +663,7 @@ This project addresses all evaluation focus areas:
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 ### Technologies & Tools
 - **[Qdrant](https://qdrant.tech/)** - Powerful vector database
@@ -717,7 +683,7 @@ This project addresses all evaluation focus areas:
 
 ---
 
-## 📝 License
+## License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
@@ -749,6 +715,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 [🚀 Demo](YOUR_VERCEL_DEPLOYMENT_URL) • 
 [🏗️ Architecture](YOUR_VERCEL_DEPLOYMENT_URL/architecture.html) • 
 [📹 Video](YOUR_VIDEO_DEMO_LINK) • 
-[💻 GitHub](https://github.com/asneem1234/walmart_hackathon_project)
+[💻 GitHub](https://github.com/asneem1234/unthinkable-solutions)
 
 </div>
