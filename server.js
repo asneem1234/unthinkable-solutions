@@ -15,7 +15,6 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
 
 // Configure multer for file uploads
 // Use /tmp directory for serverless environments (Vercel)
@@ -220,6 +219,9 @@ app.delete('/api/documents', async (req, res) => {
     });
   }
 });
+
+// Serve static files AFTER route handlers (so routes take precedence)
+app.use(express.static(path.join(__dirname, 'public'), { index: false }));
 
 // Error handling middleware
 app.use((err, req, res, next) => {
