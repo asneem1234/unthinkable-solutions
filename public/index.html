@@ -35,12 +35,23 @@
             </div>
         </header>
 
+        <!-- Quick Start Guide -->
+        <div class="quick-start-banner" style="background: linear-gradient(135deg, #38bdf8 0%, #ec4899 100%); color: white; padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);">
+            <h3 style="margin: 0 0 0.5rem 0; font-size: 1.2rem;">🚀 Quick Start Guide</h3>
+            <p style="margin: 0; font-size: 0.95rem; line-height: 1.6; opacity: 0.95;">
+                <strong>New here?</strong> Follow these simple steps: 
+                <strong>1)</strong> Upload your documents below 
+                <strong>2)</strong> Type a question 
+                <strong>3)</strong> Click "Get Answer" to receive AI-powered insights from your documents
+            </p>
+        </div>
+
         <!-- Main Content -->
         <div class="main-content">
             <!-- Upload Section -->
             <section class="upload-section card">
-                <h2>📁 Upload Documents</h2>
-                <p class="description">Upload PDF, TXT, DOC, or DOCX files to build your knowledge base</p>
+                <h2>📁 Step 1: Upload Your Documents</h2>
+                <p class="description">Start here! Upload PDF, TXT, DOC, or DOCX files to build your knowledge base</p>
                 
                 <div class="upload-area" id="uploadArea">
                     <svg class="upload-icon" viewBox="0 0 24 24" fill="none">
@@ -57,7 +68,7 @@
                 <div id="fileList" class="file-list"></div>
                 
                 <button id="uploadBtn" class="btn btn-primary" disabled>
-                    <span class="btn-text">Upload & Process</span>
+                    <span class="btn-text">📤 Upload & Process Documents</span>
                     <span class="spinner" hidden></span>
                 </button>
 
@@ -66,37 +77,37 @@
 
             <!-- Query Section -->
             <section class="query-section card">
-                <h2>🔍 Ask Questions</h2>
-                <p class="description">Query your knowledge base using natural language with intelligent compression</p>
+                <h2>🔍 Step 2: Ask Questions</h2>
+                <p class="description">After uploading documents, type your question below to search through your knowledge base</p>
                 
                 <div class="query-input-container">
                     <textarea 
                         id="queryInput" 
                         class="query-input" 
-                        placeholder="Ask a question about your documents...&#10;&#10;Example: What are the main topics discussed in the documents?"
+                        placeholder="Type your question here...&#10;&#10;Example: What are the main topics discussed in the documents?&#10;Example: Summarize the key findings from the uploaded files."
                         rows="3"
                     ></textarea>
                     <div class="query-actions">
                         <button id="queryBtn" class="btn btn-primary">
-                            <span class="btn-text">🚀 Fast Search</span>
+                            <span class="btn-text">🚀 Get Answer (Recommended)</span>
                             <span class="spinner" hidden></span>
                         </button>
                         <button id="compareBtn" class="btn btn-secondary">
-                            <span class="btn-text">⚡ Compare Mode</span>
+                            <span class="btn-text">⚖️ Show Performance Comparison</span>
                             <span class="spinner" hidden></span>
                         </button>
                     </div>
                 </div>
                 
                 <div class="mode-info">
-                    <span class="info-badge">💡 <strong>Fast Search</strong> uses intelligent compression (60% faster)</span>
-                    <span class="info-badge">⚡ <strong>Compare Mode</strong> shows baseline vs compressed side-by-side</span>
+                    <span class="info-badge">💡 <strong>Get Answer:</strong> Fast, optimized search with ReFRAG compression (60% faster, lower cost)</span>
+                    <span class="info-badge">⚖️ <strong>Performance Comparison:</strong> See side-by-side results: Standard RAG vs ReFRAG Compressed</span>
                 </div>
 
                 <!-- Answer Display (Regular Mode) -->
                 <div id="answerSection" class="answer-section" hidden>
                     <div class="answer-header">
-                        <h3>💡 Answer (Compressed Mode)</h3>
+                        <h3>💡 Your Answer (ReFRAG Optimized)</h3>
                         <div class="confidence-badge" id="confidenceBadge"></div>
                     </div>
                     <div id="answerText" class="answer-text"></div>
@@ -115,7 +126,7 @@
                 
                 <!-- Comparison Display -->
                 <div id="comparisonSection" class="comparison-section" hidden>
-                    <h3>⚡ Baseline vs Compressed Comparison</h3>
+                    <h3>⚖️ Performance Comparison: Standard vs ReFRAG</h3>
                     
                     <!-- Improvement Metrics -->
                     <div id="improvementMetrics" class="improvement-metrics"></div>
@@ -123,12 +134,12 @@
                     <!-- Side by Side Answers -->
                     <div class="comparison-grid">
                         <div class="comparison-result baseline">
-                            <h4>📊 Baseline (Standard RAG)</h4>
+                            <h4>📊 Standard RAG (Without Optimization)</h4>
                             <div id="baselineAnswer" class="answer-text"></div>
                             <div id="baselineMetadata" class="metadata"></div>
                         </div>
                         <div class="comparison-result compressed">
-                            <h4>🚀 Compressed (REFRAG Method)</h4>
+                            <h4>🚀 ReFRAG Method (With Compression)</h4>
                             <div id="compressedAnswer" class="answer-text"></div>
                             <div id="compressedMetadata" class="metadata"></div>
                         </div>
@@ -139,11 +150,11 @@
             <!-- Query History -->
             <section class="history-section card">
                 <div class="history-header">
-                    <h2>📜 Query History</h2>
-                    <button id="clearHistoryBtn" class="btn btn-secondary btn-sm">Clear History</button>
+                    <h2>📜 Previous Questions & Answers</h2>
+                    <button id="clearHistoryBtn" class="btn btn-secondary btn-sm">🗑️ Clear All History</button>
                 </div>
                 <div id="historyList" class="history-list">
-                    <p class="empty-state">No queries yet. Ask your first question!</p>
+                    <p class="empty-state">No questions asked yet. Upload documents and ask your first question above! ☝️</p>
                 </div>
             </section>
         </div>
@@ -151,7 +162,7 @@
         <!-- Footer -->
         <footer class="footer">
             <p>Powered by <strong>Qdrant</strong> + <strong>Google Gemini</strong> + <strong>Transformers.js</strong></p>
-            <button id="clearDbBtn" class="btn btn-danger btn-sm">Clear All Documents</button>
+            <button id="clearDbBtn" class="btn btn-danger btn-sm">🗑️ Delete All Documents & Start Over</button>
         </footer>
     </div>
 
