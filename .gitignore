@@ -17,6 +17,9 @@ logs/
 npm-debug.log*
 chroma.log
 
+# Vercel
+.vercel
+
 # OS
 .DS_Store
 Thumbs.db

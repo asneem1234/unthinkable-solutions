@@ -13,6 +13,7 @@ An advanced **Retrieval-Augmented Generation (RAG)** system that enables intelli
 - [API Endpoints](#-api-endpoints)
 - [Project Structure](#-project-structure)
 - [How It Works](#-how-it-works)
+- [Deployment](#-deployment)
 - [Contributing](#-contributing)
 - [License](#-license)
 
@@ -281,6 +282,39 @@ Check model availability:
 ```bash
 node check-models.js
 ```
+
+## 🌐 Deployment
+
+### Deploy to Vercel
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/asneem1234/unthinkable-solutions)
+
+**Quick Deploy Steps:**
+
+1. Click the "Deploy with Vercel" button above
+2. Sign in to Vercel with GitHub
+3. Add environment variables:
+   - `QDRANT_URL` - Your Qdrant Cloud URL
+   - `QDRANT_API_KEY` - Your Qdrant API key
+   - `QDRANT_COLLECTION` - Collection name (e.g., knowledge_base)
+   - `GEMINI_API_KEY` - Your Google Gemini API key
+   - `CHUNK_SIZE` - 1000
+   - `CHUNK_OVERLAP` - 200
+4. Click "Deploy"
+
+**Important Notes:**
+- Use [Qdrant Cloud](https://cloud.qdrant.io/) for production (free tier available)
+- Vercel Hobby plan has 10s timeout; Pro plan recommended for larger files
+- See [VERCEL_DEPLOYMENT.md](VERCEL_DEPLOYMENT.md) for detailed instructions
+
+### Alternative Deployment Options
+
+- **Railway**: `railway up`
+- **Render**: Connect GitHub repo and deploy
+- **Heroku**: `git push heroku main`
+- **AWS/GCP**: Use containerization with Docker
+
+For detailed deployment instructions, see [VERCEL_DEPLOYMENT.md](VERCEL_DEPLOYMENT.md)
 
 ## 🤝 Contributing
 
