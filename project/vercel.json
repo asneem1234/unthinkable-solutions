@@ -1,5 +1,7 @@
 {
   "version": 2,
+  "installCommand": "npm install --legacy-peer-deps",
+  "buildCommand": "npm run build",
   "builds": [
     {
       "src": "server.js",
@@ -21,6 +23,5 @@
   ],
   "env": {
     "NODE_ENV": "production"
-  },
-  "installCommand": "npm install --legacy-peer-deps"
+  }
 }
