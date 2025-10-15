@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Base RAG Engine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="8" fill="url(#gradient)"/>
+                    <path d="M20 10L12 18H18V30H22V18H28L20 10Z" fill="white"/>
+                    <defs>
+                        <linearGradient id="gradient" x1="0" y1="0" x2="40" y2="40">
+                            <stop offset="0%" stop-color="#667eea"/>
+                            <stop offset="100%" stop-color="#764ba2"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <h1>Knowledge Base RAG Engine</h1>
+            </div>
+            <div class="stats" id="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Documents</span>
+                    <span class="stat-value" id="docCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Chunks</span>
+                    <span class="stat-value" id="chunkCount">0</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Upload Section -->
+            <section class="upload-section card">
+                <h2>📁 Upload Documents</h2>
+                <p class="description">Upload PDF, TXT, DOC, or DOCX files to build your knowledge base</p>
+                
+                <div class="upload-area" id="uploadArea">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none">
+                        <path d="M7 16V12M7 12L5 14M7 12L9 14M17 8V12M17 12L15 10M17 12L19 10M12 3V9M12 3L10 5M12 3L14 5" 
+                              stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M3 15V18C3 19.1046 3.89543 20 5 20H19C20.1046 20 21 19.1046 21 18V15" 
+                              stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <p>Drag & drop files here or click to browse</p>
+                    <p class="file-types">Supported: PDF, TXT, DOC, DOCX (Max 10MB each)</p>
+                    <input type="file" id="fileInput" multiple accept=".pdf,.txt,.doc,.docx" hidden>
+                </div>
+
+                <div id="fileList" class="file-list"></div>
+                
+                <button id="uploadBtn" class="btn btn-primary" disabled>
+                    <span class="btn-text">Upload & Process</span>
+                    <span class="spinner" hidden></span>
+                </button>
+
+                <div id="uploadStatus" class="status-message"></div>
+            </section>
+
+            <!-- Query Section -->
+            <section class="query-section card">
+                <h2>🔍 Ask Questions</h2>
+                <p class="description">Query your knowledge base using natural language with intelligent compression</p>
+                
+                <div class="query-input-container">
+                    <textarea 
+                        id="queryInput" 
+                        class="query-input" 
+                        placeholder="Ask a question about your documents...&#10;&#10;Example: What are the main topics discussed in the documents?"
+                        rows="3"
+                    ></textarea>
+                    <div class="query-actions">
+                        <button id="queryBtn" class="btn btn-primary">
+                            <span class="btn-text">🚀 Fast Search</span>
+                            <span class="spinner" hidden></span>
+                        </button>
+                        <button id="compareBtn" class="btn btn-secondary">
+                            <span class="btn-text">⚡ Compare Mode</span>
+                            <span class="spinner" hidden></span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="mode-info">
+                    <span class="info-badge">💡 <strong>Fast Search</strong> uses intelligent compression (60% faster)</span>
+                    <span class="info-badge">⚡ <strong>Compare Mode</strong> shows baseline vs compressed side-by-side</span>
+                </div>
+
+                <!-- Answer Display (Regular Mode) -->
+                <div id="answerSection" class="answer-section" hidden>
+                    <div class="answer-header">
+                        <h3>💡 Answer (Compressed Mode)</h3>
+                        <div class="confidence-badge" id="confidenceBadge"></div>
+                    </div>
+                    <div id="answerText" class="answer-text"></div>
+                    
+                    <div class="metadata" id="metadata"></div>
+                    
+                    <!-- Compression Metrics -->
+                    <div id="compressionMetrics" class="compression-metrics"></div>
+
+                    <!-- Sources -->
+                    <div class="sources-section" id="sourcesSection" hidden>
+                        <h4>📚 Sources</h4>
+                        <div id="sourcesList" class="sources-list"></div>
+                    </div>
+                </div>
+                
+                <!-- Comparison Display -->
+                <div id="comparisonSection" class="comparison-section" hidden>
+                    <h3>⚡ Baseline vs Compressed Comparison</h3>
+                    
+                    <!-- Improvement Metrics -->
+                    <div id="improvementMetrics" class="improvement-metrics"></div>
+                    
+                    <!-- Side by Side Answers -->
+                    <div class="comparison-grid">
+                        <div class="comparison-result baseline">
+                            <h4>📊 Baseline (Standard RAG)</h4>
+                            <div id="baselineAnswer" class="answer-text"></div>
+                            <div id="baselineMetadata" class="metadata"></div>
+                        </div>
+                        <div class="comparison-result compressed">
+                            <h4>🚀 Compressed (REFRAG Method)</h4>
+                            <div id="compressedAnswer" class="answer-text"></div>
+                            <div id="compressedMetadata" class="metadata"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Query History -->
+            <section class="history-section card">
+                <div class="history-header">
+                    <h2>📜 Query History</h2>
+                    <button id="clearHistoryBtn" class="btn btn-secondary btn-sm">Clear History</button>
+                </div>
+                <div id="historyList" class="history-list">
+                    <p class="empty-state">No queries yet. Ask your first question!</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Powered by <strong>Qdrant</strong> + <strong>Google Gemini</strong> + <strong>Transformers.js</strong></p>
+            <button id="clearDbBtn" class="btn btn-danger btn-sm">Clear All Documents</button>
+        </footer>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
