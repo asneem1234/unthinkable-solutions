@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "installCommand": "cd project && npm install --legacy-peer-deps",
+  "buildCommand": "cd project && npm run build",
+  "builds": [
+    {
+      "src": "project/server.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["project/public/**", "project/routes/**", "project/utils/**"]
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/project/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/project/server.js"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
