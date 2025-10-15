@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🧠 Knowledge-Base Search Engine
+# Knowledge-Base Search Engine
 ### Advanced RAG Implementation with Meta AI's ReFRAG
 
 <!-- 
@@ -16,8 +16,8 @@
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/asneem1234/walmart_hackathon_project)
 [![Architecture](https://img.shields.io/badge/View-Architecture-38bdf8?style=for-the-badge&logo=diagram)](YOUR_VERCEL_DEPLOYMENT_URL/architecture.html)
 
-**🎓 Placement Drive Assignment - Challenge #7**  
-**🏢 Unthinkable Solutions**
+**Placement Drive Assignment - Challenge #7**  
+**Unthinkable Solutions**
 
 ---
 
@@ -29,24 +29,22 @@
 
 ---
 
-## 🎥 Demo
-
-### � Submission Details
+## Submission Details
 
 | Field | Information |
 |-------|-------------|
 | **Name** | ASNEEM ATHAR SHAIK |
 | **Registration No.** | 22BCE8807 |
 | **Task Name** | Knowledge Base Search Engine |
-| **Live Demo** | [🚀 Try the Application](YOUR_VERCEL_DEPLOYMENT_URL) |
+| **Live Demo** | [Try the Application](YOUR_VERCEL_DEPLOYMENT_URL) |
 
 ---
 
-### 📹 Video Demonstration
+## Video Demonstration
 
 <div align="center">
 
-**🎬 Complete Project Walkthrough**
+**Complete Project Walkthrough**
 
 <!-- Replace YOUR_VIDEO_ID with your actual YouTube video ID -->
 <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID">
@@ -62,50 +60,57 @@
 https://www.youtube.com/embed/YOUR_VIDEO_ID
 ```
 
-> 💡 **Tip:** Replace `YOUR_VIDEO_ID` above with your actual YouTube video ID (e.g., if your URL is `https://youtu.be/dQw4w9WgXcQ`, the ID is `dQw4w9WgXcQ`)
+> **Note:** Replace `YOUR_VIDEO_ID` above with your actual YouTube video ID (e.g., if your URL is `https://youtu.be/dQw4w9WgXcQ`, the ID is `dQw4w9WgXcQ`)
 
-**📝 What's covered in the video:**
-- 📤 Document upload and processing demonstration
-- 🔍 Semantic search capabilities
-- 🤖 RAG-based question answering with ReFRAG
-- ⚖️ Performance comparison mode (Standard vs ReFRAG)
-- 📊 Real-time performance metrics analysis
-- 🏗️ System architecture walkthrough
-- 💡 Key features and innovations
-
----
-
-### 🌐 Application Links
-- **🏠 Landing Page:** [View Project Overview](YOUR_VERCEL_DEPLOYMENT_URL/landing.html)
-- **🚀 Live Demo:** [Try the Application](YOUR_VERCEL_DEPLOYMENT_URL)
-- **🏗️ Architecture:** [System Architecture Details](YOUR_VERCEL_DEPLOYMENT_URL/architecture.html)
-- **💻 Source Code:** [GitHub Repository](https://github.com/asneem1234/walmart_hackathon_project)
+**What's covered in the video:**
+- Document upload and processing demonstration
+- Semantic search capabilities
+- RAG-based question answering with ReFRAG
+- Performance comparison mode (Standard vs ReFRAG)
+- Real-time performance metrics analysis
+- System architecture walkthrough
+- Key features and innovations
 
 ---
 
-## 📋 Table of Contents
-
-- [🎥 Demo](#-demo)
-- [🎯 Project Overview](#-project-overview)
-- [✨ Features](#-features)
-- [🚀 What Makes This Special](#-what-makes-this-special)
-- [🛠 Tech Stack](#-tech-stack)
-- [📊 Performance Metrics](#-performance-metrics)
-- [📦 Prerequisites](#-prerequisites)
-- [🔧 Installation](#-installation)
-- [⚙️ Configuration](#-configuration)
-- [🎯 Usage](#-usage)
-- [📡 API Endpoints](#-api-endpoints)
-- [📁 Project Structure](#-project-structure)
-- [🧠 How It Works](#-how-it-works)
-- [🌐 Deployment](#-deployment)
-- [🔗 Links & Resources](#-links--resources)
-- [📧 Contact](#-contact)
-- [📝 License](#-license)
+## Application Links
+- **Landing Page:** [View Project Overview](YOUR_VERCEL_DEPLOYMENT_URL/landing.html)
+- **Live Demo:** [Try the Application](YOUR_VERCEL_DEPLOYMENT_URL)
+- **Architecture:** [System Architecture Details](YOUR_VERCEL_DEPLOYMENT_URL/architecture.html)
+- **Source Code:** [GitHub Repository](https://github.com/asneem1234/walmart_hackathon_project)
 
 ---
 
-## 🎯 Project Overview
+## Table of Contents
+
+1. [Submission Details](#submission-details)
+2. [Video Demonstration](#video-demonstration)
+3. [Application Links](#application-links)
+4. [Project Overview](#project-overview)
+5. [Features](#features)
+6. [What Makes This Special](#what-makes-this-special)
+7. [Tech Stack](#tech-stack)
+8. [Performance Metrics](#performance-metrics)
+9. [Prerequisites](#prerequisites)
+10. [Installation](#installation)
+11. [Configuration](#configuration)
+12. [Usage](#usage)
+13. [API Endpoints](#api-endpoints)
+14. [Project Structure](#project-structure)
+15. [How It Works](#how-it-works)
+16. [Advanced Features](#advanced-features)
+17. [Testing](#testing)
+18. [Deployment](#deployment)
+19. [Links & Resources](#links--resources)
+20. [Contact](#contact)
+21. [Evaluation Criteria Checklist](#evaluation-criteria-checklist)
+22. [Project Highlights](#project-highlights)
+23. [Acknowledgments](#acknowledgments)
+24. [License](#license)
+
+---
+
+## Project Overview
 
 ### Assignment Context
 This project was developed as part of the **Unthinkable Solutions Placement Drive** assignment:
@@ -127,7 +132,7 @@ We've exceeded the assignment requirements by implementing:
 
 ---
 
-## ✨ Features
+## Features
 
 ### Core Functionality
 - 📄 **Multi-Format Document Processing** - PDF, TXT, DOC, DOCX support with intelligent parsing
@@ -152,28 +157,28 @@ We've exceeded the assignment requirements by implementing:
 
 ---
 
-## 🚀 What Makes This Special
+## What Makes This Special
 
-### 1. **ReFRAG Implementation** 🎯
+### 1. ReFRAG Implementation
 We've implemented Meta AI Research's recently published **ReFRAG (Refinement through Feedback in RAG)** methodology:
 - **Hybrid Approach**: Keeps top-3 documents in full context
 - **Semantic Compression**: Compresses remaining documents by 90%
 - **Quality Maintained**: 95%+ accuracy with 70% fewer tokens
 - **Cost Effective**: 50%+ reduction in API costs
 
-### 2. **Production-Ready Architecture** 🏗️
+### 2. Production-Ready Architecture
 - **Modular Services**: Clean separation of concerns
 - **Error Handling**: Comprehensive error management with fallbacks
 - **Performance Monitoring**: Built-in metrics and logging
 - **Scalable Design**: Ready for enterprise deployment
 
-### 3. **Complete Documentation** 📚
+### 3. Complete Documentation
 - **Visual Architecture Diagrams**: SVG-based system design
 - **Algorithm Comparison**: Standard RAG vs ReFRAG analysis
 - **API Documentation**: Full endpoint specifications
 - **Deployment Guides**: Step-by-step instructions
 
-### 4. **Professional Presentation** 💼
+### 4. Professional Presentation
 - **Landing Page**: Comprehensive project showcase
 - **Architecture Page**: Detailed technical documentation
 - **Demo Video**: Complete walkthrough
@@ -181,7 +186,7 @@ We've implemented Meta AI Research's recently published **ReFRAG (Refinement thr
 
 ---
 
-## 📊 Performance Metrics
+## Performance Metrics
 
 | Metric | Standard RAG | ReFRAG (Ours) | Improvement |
 |--------|--------------|---------------|-------------|
@@ -193,7 +198,7 @@ We've implemented Meta AI Research's recently published **ReFRAG (Refinement thr
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Backend & API
 - **Runtime:** Node.js (v18+)
@@ -225,7 +230,7 @@ We've implemented Meta AI Research's recently published **ReFRAG (Refinement thr
 
 ---
 
-## 📦 Prerequisites
+## Prerequisites
 
 Before you begin, ensure you have the following installed:
 
@@ -234,7 +239,7 @@ Before you begin, ensure you have the following installed:
 - **Qdrant** (running locally or cloud instance)
 - **Google Gemini API Key**
 
-## 🔧 Installation
+## Installation
 
 1. **Clone the repository**
    ```bash
@@ -271,7 +276,7 @@ Before you begin, ensure you have the following installed:
    npm run dev
    ```
 
-## ⚙️ Configuration
+## Configuration
 
 Create a `.env` file in the root directory with the following variables:
 
@@ -297,7 +302,7 @@ CHUNK_OVERLAP=200
 - **Gemini API Key**: Get it from [Google AI Studio](https://makersuite.google.com/app/apikey)
 - **Qdrant API Key**: Get it from [Qdrant Cloud Dashboard](https://cloud.qdrant.io/) (if using cloud)
 
-## 🎯 Usage
+## Usage
 
 1. **Start the application**
    ```bash
@@ -317,7 +322,7 @@ CHUNK_OVERLAP=200
    - Get AI-powered answers with source references
    - View relevance scores for each result
 
-## 📡 API Endpoints
+## API Endpoints
 
 ### Upload Document
 ```http
@@ -394,7 +399,7 @@ Response:
 }
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 unthinkable-solutions/
@@ -416,7 +421,7 @@ unthinkable-solutions/
 └── README.md              # This file
 ```
 
-## 🧠 How It Works
+## How It Works
 
 ### Document Ingestion Flow
 ```mermaid
@@ -524,7 +529,7 @@ Check model availability:
 node check-models.js
 ```
 
-## 🌐 Deployment
+## Deployment
 
 ### Deploy to Vercel
 
@@ -580,7 +585,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🔗 Links & Resources
+## Links & Resources
 
 ### 🌐 Project Links
 - **🏠 Landing Page:** [View Project Overview](YOUR_VERCEL_DEPLOYMENT_URL/landing.html)
@@ -609,7 +614,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## �📧 Contact
+## Contact
 
 ### Developer Information
 - **GitHub:** [@asneem1234](https://github.com/asneem1234)
@@ -625,7 +630,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🎯 Evaluation Criteria Checklist
+## Evaluation Criteria Checklist
 
 This project addresses all evaluation focus areas:
 
@@ -657,7 +662,7 @@ This project addresses all evaluation focus areas:
 
 ---
 
-## 🏆 Project Highlights
+## Project Highlights
 
 ### What Makes This Submission Stand Out
 
