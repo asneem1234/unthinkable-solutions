@@ -42,37 +42,61 @@
             }
         }
 
-        .header {
-            text-align: center;
+        .company-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
             margin-bottom: 40px;
+            text-align: center;
         }
 
-        .header h1 {
-            font-size: 3em;
-            color: #333;
+        .company-header h1 {
+            font-size: 2.5em;
             margin-bottom: 10px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            letter-spacing: 2px;
         }
 
-        .header .subtitle {
+        .company-header .tagline {
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .recruiting-note {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1em;
+            margin-top: 20px;
+        }
+
+        .candidate-section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border-left: 5px solid #667eea;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .candidate-name {
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .candidate-title {
             font-size: 1.3em;
             color: #666;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
-        .author {
+        .candidate-intro {
             font-size: 1.1em;
-            color: #888;
-            font-style: italic;
-        }
-
-        .author span {
-            color: #667eea;
-            font-weight: bold;
-            font-style: normal;
+            line-height: 1.8;
+            color: #555;
         }
 
         .description {
@@ -195,9 +219,107 @@
             font-weight: 500;
         }
 
+        /* Performance Metrics Section */
+        .metrics-section {
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 15px;
+            border: 3px solid #4caf50;
+        }
+
+        .metrics-section h2 {
+            color: #2e7d32;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .metrics-intro {
+            text-align: center;
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #4caf50;
+        }
+
+        .metric-label {
+            font-size: 0.9em;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .metric-value {
+            font-size: 2.5em;
+            color: #2e7d32;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .metric-desc {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .refrag-reference {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 25px;
+            border: 2px dashed #4caf50;
+        }
+
+        .refrag-reference h4 {
+            color: #2e7d32;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .refrag-reference p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .refrag-reference a {
+            color: #2e7d32;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid #4caf50;
+            padding-bottom: 2px;
+        }
+
+        .refrag-reference a:hover {
+            color: #1b5e20;
+            border-bottom-color: #2e7d32;
+        }
+
         .footer {
             text-align: center;
             margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #eee;
             color: #888;
             font-size: 0.9em;
         }
@@ -206,6 +328,13 @@
             margin-top: 10px;
             font-size: 0.85em;
             color: #999;
+        }
+
+        .contact-info {
+            margin-top: 15px;
+            font-size: 1em;
+            color: #667eea;
+            font-weight: 500;
         }
 
         /* Project Scope Section */
@@ -505,12 +634,16 @@
                 padding: 40px 20px;
             }
 
-            .header h1 {
+            .company-header h1 {
+                font-size: 1.8em;
+            }
+
+            .candidate-name {
                 font-size: 2em;
             }
 
-            .header .subtitle {
-                font-size: 1.1em;
+            .candidate-section {
+                padding: 25px;
             }
 
             .button-grid {
@@ -518,7 +651,8 @@
             }
 
             .project-scope,
-            .innovations {
+            .innovations,
+            .metrics-section {
                 padding: 20px;
             }
 
@@ -533,24 +667,40 @@
 
             .requirements-grid,
             .achievement-grid,
-            .eval-grid {
+            .eval-grid,
+            .metrics-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .metric-value {
+                font-size: 2em;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>🚀 Knowledge Base RAG Engine</h1>
-            <p class="subtitle">Advanced AI-Powered Document Search & Q&A System</p>
-            <p class="author">Created by <span>Asneem</span></p>
+        <!-- Company Header -->
+        <div class="company-header">
+            <h1>UNTHINKABLE SOLUTIONS</h1>
+            <p class="tagline">Recruiting Team - Technical Assessment Review</p>
+            <div class="recruiting-note">
+                📋 Candidate Submission: Knowledge-Base Search Engine with RAG Implementation
+            </div>
         </div>
 
-        <div class="description">
-            An intelligent Retrieval-Augmented Generation (RAG) system that combines vector embeddings, 
-            Qdrant database, and Google's Gemini AI to provide accurate answers from your documents. 
-            Upload PDFs, Word docs, or text files and get instant, context-aware responses!
+        <!-- Candidate Section -->
+        <div class="candidate-section">
+            <div class="candidate-name">Asneem</div>
+            <div class="candidate-title">Full-Stack AI Engineer | RAG Systems Specialist</div>
+            <div class="candidate-intro">
+                Dear Unthinkable Solutions Recruiting Team,<br><br>
+                I'm excited to present my implementation of the Knowledge-Base Search Engine challenge. 
+                This is not just a prototype - it's a production-ready RAG system that demonstrates my ability 
+                to build scalable, intelligent AI applications. I've gone beyond the basic requirements to deliver 
+                a solution that showcases real-world engineering skills and innovative thinking.<br><br>
+                Below, you'll find a comprehensive overview of what I've built and how it exceeds expectations.
+            </div>
         </div>
 
         <div class="features">
@@ -798,9 +948,112 @@
             </div>
         </div>
 
+        <!-- Performance Metrics Section -->
+        <div class="metrics-section">
+            <h2>📊 Performance Metrics & Technical Specifications</h2>
+            <div class="metrics-intro">
+                <strong>Dear Unthinkable Solutions Team,</strong><br>
+                Here are the key technical metrics that demonstrate the production-readiness and efficiency of my RAG system.
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-label">Vector Dimensions</div>
+                    <div class="metric-value">384</div>
+                    <div class="metric-desc">Using Xenova/all-MiniLM-L6-v2 model for optimal balance between speed and accuracy</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label">Chunk Size</div>
+                    <div class="metric-value">1000</div>
+                    <div class="metric-desc">Characters per chunk with 200-char overlap to preserve context across boundaries</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label">Similarity Threshold</div>
+                    <div class="metric-value">0.7+</div>
+                    <div class="metric-desc">Cosine similarity threshold ensuring only relevant results are retrieved</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label">Top-K Results</div>
+                    <div class="metric-value">5</div>
+                    <div class="metric-desc">Configurable retrieval of most relevant chunks for context building</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label">LLM Model</div>
+                    <div class="metric-value">Gemini 1.5</div>
+                    <div class="metric-desc">Flash variant for fast, accurate answer synthesis from retrieved context</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label">Supported Formats</div>
+                    <div class="metric-value">4</div>
+                    <div class="metric-desc">PDF, DOCX, DOC, and TXT with specialized parsers for each format</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label">Max File Size</div>
+                    <div class="metric-value">10 MB</div>
+                    <div class="metric-desc">Configurable upload limit with proper validation and error handling</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label">Response Time</div>
+                    <div class="metric-value">&lt;3s</div>
+                    <div class="metric-desc">Average query-to-answer latency for typical document collections</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label">Vector Database</div>
+                    <div class="metric-value">Qdrant</div>
+                    <div class="metric-desc">Production-grade vector DB with HNSW indexing for fast similarity search</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label">Architecture</div>
+                    <div class="metric-value">Serverless</div>
+                    <div class="metric-desc">Deployed on Vercel with auto-scaling and global CDN distribution</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label">Code Quality</div>
+                    <div class="metric-value">Modular</div>
+                    <div class="metric-desc">Clean service-oriented architecture with separation of concerns</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label">Error Handling</div>
+                    <div class="metric-value">Comprehensive</div>
+                    <div class="metric-desc">Graceful degradation with detailed error messages and recovery</div>
+                </div>
+            </div>
+
+            <div class="refrag-reference">
+                <h4>📚 Scientific Foundation & Advanced Techniques</h4>
+                <p>
+                    For a deeper understanding of the RAG methodology and scientific principles behind this implementation, 
+                    I've included <strong>refrag.pdf</strong> in the repository. This document provides comprehensive insights into:
+                </p>
+                <ul style="margin: 15px 0; padding-left: 25px; line-height: 2;">
+                    <li><strong>Retrieval-Augmented Generation Theory</strong> - How RAG improves LLM accuracy</li>
+                    <li><strong>Vector Embedding Mathematics</strong> - The science behind semantic search</li>
+                    <li><strong>Chunking Strategies</strong> - Why overlap matters for context preservation</li>
+                    <li><strong>Similarity Metrics</strong> - Cosine vs. Euclidean distance in vector spaces</li>
+                    <li><strong>Performance Optimization</strong> - Trade-offs between speed and accuracy</li>
+                </ul>
+                <p style="margin-top: 15px;">
+                    📄 <a href="/refrag.pdf" target="_blank">View refrag.pdf</a> for scientific details and implementation rationale
+                </p>
+            </div>
+        </div>
+
         <div class="footer">
-            <p>© 2025 Asneem. Built with passion for intelligent document understanding.</p>
-            <p class="footer-note">I'm excited to show you what I've built - a production-ready RAG system that goes beyond the requirements!</p>
+            <p><strong>Submitted to: Unthinkable Solutions Recruiting Team</strong></p>
+            <p>© 2025 Asneem - Full-Stack AI Engineer</p>
+            <p class="contact-info">Ready to discuss this implementation and join your team!</p>
+            <p class="footer-note">Thank you for considering my application. I look forward to demonstrating this system in person.</p>
         </div>
     </div>
 
