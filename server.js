@@ -218,19 +218,30 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Start server
-app.listen(PORT, async () => {
-  console.log(`🚀 Knowledge Base RAG Engine running on port ${PORT}`);
-  console.log(`📍 Frontend: http://localhost:${PORT}`);
-  console.log(`📍 API: http://localhost:${PORT}/api`);
-  
-  // Initialize Qdrant collection on startup
-  try {
-    await qdrantService.initializeCollection();
-    console.log('✅ Qdrant collection initialized');
-  } catch (error) {
-    console.error('❌ Failed to initialize Qdrant:', error.message);
+// Initialize Qdrant (for serverless environments)
+let isInitialized = false;
+async function initializeQdrant() {
+  if (!isInitialized) {
+    try {
+      await qdrantService.initializeCollection();
+      console.log('✅ Qdrant collection initialized');
+      isInitialized = true;
+    } catch (error) {
+      console.error('❌ Failed to initialize Qdrant:', error.message);
+    }
   }
-});
+}
 
+// Start server (only if not in serverless environment)
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  app.listen(PORT, async () => {
+    console.log(`🚀 Knowledge Base RAG Engine running on port ${PORT}`);
+    console.log(`📍 Frontend: http://localhost:${PORT}`);
+    console.log(`📍 API: http://localhost:${PORT}/api`);
+    
+    await initializeQdrant();
+  });
+}
+
+// For Vercel serverless
 module.exports = app;
