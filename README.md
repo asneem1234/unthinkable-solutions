@@ -787,50 +787,6 @@ Your support helps others discover this work and motivates continued development
 
 ---
 
-### Quick Links
-
-<table>
-  <tr>
-    <td align="center">
-      <a href="YOUR_VERCEL_DEPLOYMENT_URL/landing.html">
-        <img src="https://img.icons8.com/fluency/48/000000/home.png" width="40" height="40" alt="Home"/>
-        <br />
-        <b>Landing Page</b>
-      </a>
-    </td>
-    <td align="center">
-      <a href="YOUR_VERCEL_DEPLOYMENT_URL">
-        <img src="https://img.icons8.com/fluency/48/000000/rocket.png" width="40" height="40" alt="Demo"/>
-        <br />
-        <b>Live Demo</b>
-      </a>
-    </td>
-    <td align="center">
-      <a href="YOUR_VERCEL_DEPLOYMENT_URL/architecture.html">
-        <img src="https://img.icons8.com/fluency/48/000000/blueprint.png" width="40" height="40" alt="Architecture"/>
-        <br />
-        <b>Architecture</b>
-      </a>
-    </td>
-    <td align="center">
-      <a href="YOUR_VIDEO_DEMO_LINK">
-        <img src="https://img.icons8.com/fluency/48/000000/youtube-play.png" width="40" height="40" alt="Video"/>
-        <br />
-        <b>Video Demo</b>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/asneem1234/unthinkable-solutions">
-        <img src="https://img.icons8.com/fluency/48/000000/github.png" width="40" height="40" alt="GitHub"/>
-        <br />
-        <b>Repository</b>
-      </a>
-    </td>
-  </tr>
-</table>
-
----
-
 ### Project Information
 
 **Knowledge-Base Search Engine**  
