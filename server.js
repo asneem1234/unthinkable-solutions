@@ -52,8 +52,13 @@ const upload = multer({
   }
 });
 
-// Root route - serve index.html
+// Root route - serve landing page
 app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'landing.html'));
+});
+
+// App route - serve main application
+app.get('/app', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
