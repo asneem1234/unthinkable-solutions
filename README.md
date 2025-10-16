@@ -37,11 +37,15 @@
 
 <div align="center">
 
-**Complete Project Walkthrough**
+### 🎬 Complete Project Walkthrough
 
-<a href="https://www.youtube.com/watch?v=alSaeGJMGzE">
-  <img src="https://img.youtube.com/vi/alSaeGJMGzE/maxresdefault.jpg" alt="Video Demo" width="800">
-</a>
+[![Video Demo Thumbnail](https://img.youtube.com/vi/alSaeGJMGzE/maxresdefault.jpg)](https://www.youtube.com/watch?v=alSaeGJMGzE)
+
+**👆 Click the thumbnail above to watch the full demo on YouTube**
+
+*Showcasing document upload, semantic search, ReFRAG implementation, and real-time query answering*
+
+---
 
 **Or watch embedded below:**
 
