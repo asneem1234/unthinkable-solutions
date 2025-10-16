@@ -57,157 +57,6 @@ https://www.youtube.com/embed/YOUR_VIDEO_ID
 
 ---
 
-## Assignment Brief
-
-### Task 7: Knowledge-Base Search Engine
-
-**Objective:**  
-Search across documents and provide synthesized answers using LLM-based retrieval-augmented generation (RAG).
-
-**Scope of Work:**
-- **Input:** Multiple text/PDF documents
-- **Output:** User query → synthesized answer
-- **Optional:** Frontend for query submission & display
-
-**Technical Expectations:**
-- Backend API to handle document ingestion & queries
-- RAG implementation or embeddings for retrieval
-- LLM for answer synthesis
-
-**Deliverables:**
-- GitHub repo + README
-- Demo video
-
-**Evaluation Focus:**
-- Retrieval accuracy
-- Synthesis quality
-- Code structure
-- LLM integration
-
----
-
-### Requirements vs Implementation
-
-| **Requirement** | **Asked to Implement** | **What I Implemented** |
-|----------------|----------------------|---------------------|
-| **Document Input** | Multiple text/PDF documents | ✅ PDF, TXT, DOC, DOCX with intelligent parsing |
-| **Output** | User query → synthesized answer | ✅ Synthesized answers + sources + metadata |
-| **Frontend** | Optional frontend | ✅ Professional multi-page UI (Main App + Landing + Architecture) |
-| **Backend API** | Document ingestion & queries | ✅ RESTful API with upload, search, RAG query, health check |
-| **RAG Implementation** | Basic RAG or embeddings | ✅ **Advanced ReFRAG** (Meta AI's compression methodology) |
-| **LLM Integration** | LLM for answer synthesis | ✅ Google Gemini 2.0 Flash with optimized prompting |
-| **Retrieval System** | Basic retrieval | ✅ Qdrant vector database + semantic search |
-| **Embeddings** | Standard embeddings | ✅ Transformers.js (MiniLM-L6-v2, 384 dimensions) |
-| **Code Structure** | Basic structure | ✅ Modular service architecture with 5 specialized services |
-| **Documentation** | README | ✅ Comprehensive README + DEMO_GUIDE + VERCEL_DEPLOYMENT |
-| **Demo** | Demo video | ✅ Video demo + Live deployment + Architecture docs |
-| **Performance** | Not specified | ✅ **60-70% token reduction**, 2-3x faster processing |
-| **Deployment** | Not specified | ✅ Vercel serverless deployment ready |
-| **Comparison Mode** | Not specified | ✅ Side-by-side Standard RAG vs ReFRAG evaluation |
-| **Vector Storage** | Not specified | ✅ Dual support: Qdrant + ChromaDB |
-
-**Key Innovation:** Implemented **ReFRAG** (Meta AI Research, 2024) - a cutting-edge compression technique that reduces token usage by 60-70% while maintaining 95%+ accuracy, resulting in significant cost savings and faster processing.
-
----
-
-## Table of Contents
-
-1. [Project Overview](#project-overview)
-2. [Features](#features)
-3. [Advanced Features](#advanced-features)
-4. [How It Works](#how-it-works)
-5. [What Makes This Special](#what-makes-this-special)
-6. [Tech Stack](#tech-stack)
-7. [Performance Metrics](#performance-metrics)
-8. [Prerequisites](#prerequisites)
-9. [Installation](#installation)
-10. [Configuration](#configuration)
-11. [Usage](#usage)
-12. [API Endpoints](#api-endpoints)
-13. [Project Structure](#project-structure)
-14. [Testing](#testing)
-15. [Deployment](#deployment)
-16. [Links & Resources](#links--resources)
-17. [Contact](#contact)
-18. [Evaluation Criteria Checklist](#evaluation-criteria-checklist)
-19. [Acknowledgments](#acknowledgments)
-20. [License](#license)
-
----
-
-## Project Overview
-
-### Assignment Context
-This project was developed as part of the **Unthinkable Solutions Placement Drive** assignment:
-- **Challenge:** #7 - Knowledge-base Search Engine
-- **Objective:** Build a RAG-based system for intelligent document search and answer synthesis
-- **Scope:** Document ingestion, semantic search, LLM-based answer generation
-
-### Problem Statement
-> *Search across documents and provide synthesized answers using LLM-based retrieval-augmented generation (RAG).*
-
-### Our Solution
-We've exceeded the assignment requirements by implementing:
-- ✅ **ReFRAG Methodology** - Meta AI's cutting-edge compression technique
-- ✅ **60-70% Token Reduction** - Significant cost and performance improvements
-- ✅ **Dual Vector Stores** - Qdrant and ChromaDB support
-- ✅ **Production-Ready** - Enterprise-grade error handling and monitoring
-- ✅ **Modern UI/UX** - Professional, responsive interface with comparison modes
-- ✅ **Complete Documentation** - Comprehensive guides and architecture diagrams
-
----
-
-## Features
-
-| Feature | Description |
-|---------|-------------|
-| **Multi-Format Document Processing** | PDF, TXT, DOC, DOCX support with intelligent parsing |
-| **Semantic Search** | Vector-based similarity search powered by Qdrant |
-| **LLM Answer Generation** | Google Gemini 2.0 Flash for accurate, contextual responses |
-| **Vector Database** | Efficient storage and retrieval with Qdrant |
-| **Smart Chunking** | Context-aware document segmentation with overlap |
-| **ReFRAG Compression** | Meta AI's methodology for 60-70% token reduction |
-| **Comparison Mode** | Side-by-side evaluation of Standard vs ReFRAG |
-| **Performance Metrics** | Real-time tracking of tokens, latency, and cost |
-| **Dual Vector Store** | Support for both Qdrant and ChromaDB |
-| **Intelligent Context Selection** | Top-3 full + compressed remaining documents |
-| **Modern UI** | Beautiful sky-blue & pink gradient design |
-| **Responsive Design** | Works seamlessly on all devices |
-| **Quick Start Guide** | Step-by-step instructions for new users |
-| **Query History** | Track and revisit previous searches |
-| **Source Citations** | View document sources for transparency |
-
----
-
-## Advanced Features
-
-### Chunking Strategy
-
-| Parameter | Value | Purpose |
-|-----------|-------|---------|
-| **Chunk Size** | 1000 characters | Configurable document segment size |
-| **Overlap** | 200 characters | Maintains context between chunks |
-| **Smart Splitting** | Sentence boundaries | Respects natural text structure |
-
-### Embedding Model
-
-| Specification | Value | Details |
-|---------------|-------|---------|
-| **Model** | `Xenova/all-MiniLM-L6-v2` | Pre-trained transformer model |
-| **Dimensions** | 384 | Vector embedding size |
-| **Max Tokens** | 512 | Maximum input sequence length |
-| **Performance** | Fast inference on CPU | Optimized for efficiency |
-
-### Vector Search
-
-| Configuration | Value | Description |
-|---------------|-------|-------------|
-| **Similarity Metric** | Cosine similarity | Measures vector angle similarity |
-| **Top-K** | Configurable | Number of results to return |
-| **Score Threshold** | 0.7 (default) | Minimum relevance score |
-
----
-
 ## How It Works
 
 ### Document Ingestion Flow
@@ -283,6 +132,156 @@ graph TB
 - LLM integration (Gemini)
 - Answer synthesis
 - Comparison mode support
+
+---
+
+## Assignment Brief
+
+### Task 7: Knowledge-Base Search Engine
+
+**Objective:**  
+Search across documents and provide synthesized answers using LLM-based retrieval-augmented generation (RAG).
+
+**Scope of Work:**
+- **Input:** Multiple text/PDF documents
+- **Output:** User query → synthesized answer
+- **Optional:** Frontend for query submission & display
+
+**Technical Expectations:**
+- Backend API to handle document ingestion & queries
+- RAG implementation or embeddings for retrieval
+- LLM for answer synthesis
+
+**Deliverables:**
+- GitHub repo + README
+- Demo video
+
+**Evaluation Focus:**
+- Retrieval accuracy
+- Synthesis quality
+- Code structure
+- LLM integration
+
+---
+
+### Requirements vs Implementation
+
+| **Requirement** | **Asked to Implement** | **What I Implemented** |
+|----------------|----------------------|---------------------|
+| **Document Input** | Multiple text/PDF documents | ✅ PDF, TXT, DOC, DOCX with intelligent parsing |
+| **Output** | User query → synthesized answer | ✅ Synthesized answers + sources + metadata |
+| **Frontend** | Optional frontend | ✅ Professional multi-page UI (Main App + Landing + Architecture) |
+| **Backend API** | Document ingestion & queries | ✅ RESTful API with upload, search, RAG query, health check |
+| **RAG Implementation** | Basic RAG or embeddings | ✅ **Advanced ReFRAG** (Meta AI's compression methodology) |
+| **LLM Integration** | LLM for answer synthesis | ✅ Google Gemini 2.0 Flash with optimized prompting |
+| **Retrieval System** | Basic retrieval | ✅ Qdrant vector database + semantic search |
+| **Embeddings** | Standard embeddings | ✅ Transformers.js (MiniLM-L6-v2, 384 dimensions) |
+| **Code Structure** | Basic structure | ✅ Modular service architecture with 5 specialized services |
+| **Documentation** | README | ✅ Comprehensive README + DEMO_GUIDE + VERCEL_DEPLOYMENT |
+| **Demo** | Demo video | ✅ Video demo + Live deployment + Architecture docs |
+| **Performance** | Not specified | ✅ **60-70% token reduction**, 2-3x faster processing |
+| **Deployment** | Not specified | ✅ Vercel serverless deployment ready |
+| **Comparison Mode** | Not specified | ✅ Side-by-side Standard RAG vs ReFRAG evaluation |
+| **Vector Storage** | Not specified | ✅ Dual support: Qdrant + ChromaDB |
+
+**Key Innovation:** Implemented **ReFRAG** (Meta AI Research, 2024) - a cutting-edge compression technique that reduces token usage by 60-70% while maintaining 95%+ accuracy, resulting in significant cost savings and faster processing.
+
+---
+
+## Table of Contents
+
+1. [Project Overview](#project-overview)
+2. [Features](#features)
+3. [Advanced Features](#advanced-features)
+4. [What Makes This Special](#what-makes-this-special)
+5. [Tech Stack](#tech-stack)
+6. [Performance Metrics](#performance-metrics)
+7. [Prerequisites](#prerequisites)
+8. [Installation](#installation)
+9. [Configuration](#configuration)
+10. [Usage](#usage)
+11. [API Endpoints](#api-endpoints)
+12. [Project Structure](#project-structure)
+13. [Testing](#testing)
+14. [Deployment](#deployment)
+15. [Links & Resources](#links--resources)
+16. [Contact](#contact)
+17. [Evaluation Criteria Checklist](#evaluation-criteria-checklist)
+18. [Acknowledgments](#acknowledgments)
+19. [License](#license)
+
+---
+
+## Project Overview
+
+### Assignment Context
+This project was developed as part of the **Unthinkable Solutions Placement Drive** assignment:
+- **Challenge:** #7 - Knowledge-base Search Engine
+- **Objective:** Build a RAG-based system for intelligent document search and answer synthesis
+- **Scope:** Document ingestion, semantic search, LLM-based answer generation
+
+### Problem Statement
+> *Search across documents and provide synthesized answers using LLM-based retrieval-augmented generation (RAG).*
+
+### Our Solution
+We've exceeded the assignment requirements by implementing:
+- ✅ **ReFRAG Methodology** - Meta AI's cutting-edge compression technique
+- ✅ **60-70% Token Reduction** - Significant cost and performance improvements
+- ✅ **Dual Vector Stores** - Qdrant and ChromaDB support
+- ✅ **Production-Ready** - Enterprise-grade error handling and monitoring
+- ✅ **Modern UI/UX** - Professional, responsive interface with comparison modes
+- ✅ **Complete Documentation** - Comprehensive guides and architecture diagrams
+
+---
+
+## Features
+
+| Feature | Description |
+|---------|-------------|
+| **Multi-Format Document Processing** | PDF, TXT, DOC, DOCX support with intelligent parsing |
+| **Semantic Search** | Vector-based similarity search powered by Qdrant |
+| **LLM Answer Generation** | Google Gemini 2.0 Flash for accurate, contextual responses |
+| **Vector Database** | Efficient storage and retrieval with Qdrant |
+| **Smart Chunking** | Context-aware document segmentation with overlap |
+| **ReFRAG Compression** | Meta AI's methodology for 60-70% token reduction |
+| **Comparison Mode** | Side-by-side evaluation of Standard vs ReFRAG |
+| **Performance Metrics** | Real-time tracking of tokens, latency, and cost |
+| **Dual Vector Store** | Support for both Qdrant and ChromaDB |
+| **Intelligent Context Selection** | Top-3 full + compressed remaining documents |
+| **Modern UI** | Beautiful sky-blue & pink gradient design |
+| **Responsive Design** | Works seamlessly on all devices |
+| **Quick Start Guide** | Step-by-step instructions for new users |
+| **Query History** | Track and revisit previous searches |
+| **Source Citations** | View document sources for transparency |
+
+---
+
+## Advanced Features
+
+### Chunking Strategy
+
+| Parameter | Value | Purpose |
+|-----------|-------|---------|
+| **Chunk Size** | 1000 characters | Configurable document segment size |
+| **Overlap** | 200 characters | Maintains context between chunks |
+| **Smart Splitting** | Sentence boundaries | Respects natural text structure |
+
+### Embedding Model
+
+| Specification | Value | Details |
+|---------------|-------|---------|
+| **Model** | `Xenova/all-MiniLM-L6-v2` | Pre-trained transformer model |
+| **Dimensions** | 384 | Vector embedding size |
+| **Max Tokens** | 512 | Maximum input sequence length |
+| **Performance** | Fast inference on CPU | Optimized for efficiency |
+
+### Vector Search
+
+| Configuration | Value | Description |
+|---------------|-------|-------------|
+| **Similarity Metric** | Cosine similarity | Measures vector angle similarity |
+| **Top-K** | Configurable | Number of results to return |
+| **Score Threshold** | 0.7 (default) | Minimum relevance score |
 
 ---
 
