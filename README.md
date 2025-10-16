@@ -223,8 +223,8 @@ This project was developed as part of the **Unthinkable Solutions Placement Driv
 ### Problem Statement
 > *Search across documents and provide synthesized answers using LLM-based retrieval-augmented generation (RAG).*
 
-### Our Solution
-We've exceeded the assignment requirements by implementing:
+### My Solution
+I've exceeded the assignment requirements by implementing:
 - ✅ **ReFRAG Methodology** - Meta AI's cutting-edge compression technique
 - ✅ **60-70% Token Reduction** - Significant cost and performance improvements
 - ✅ **Dual Vector Stores** - Qdrant and ChromaDB support
@@ -636,7 +636,7 @@ This project addresses all evaluation focus areas as outlined in the assignment 
 
 ### Detailed Breakdown
 
-| Focus Area | Requirements | Our Implementation | Evidence |
+| Focus Area | Requirements | My Implementation | Evidence |
 |------------|--------------|-------------------|----------|
 | **Retrieval Accuracy** | Accurate document retrieval based on query | ReFRAG-enhanced semantic search with 95%+ accuracy | Performance Metrics section |
 | **Synthesis Quality** | High-quality answer generation | Gemini 2.0 Flash with optimized prompting | Demo video, Live application |
