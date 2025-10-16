@@ -39,7 +39,7 @@
 
 ### 🎬 Complete Project Walkthrough
 
-[![Video Demo Thumbnail](https://img.youtube.com/vi/alSaeGJMGzE/maxresdefault.jpg)](https://www.youtube.com/watch?v=alSaeGJMGzE)
+[![Video Demo Thumbnail](THUMBNAIL.png)](https://www.youtube.com/watch?v=alSaeGJMGzE)
 
 **👆 Click the thumbnail above to watch the full demo on YouTube**
 
