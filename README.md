@@ -3,18 +3,11 @@
 # Knowledge-Base Search Engine
 ### Advanced RAG Implementation with Meta AI's ReFRAG
 
-<!-- 
-📝 TODO: Replace these placeholder links with your actual URLs:
-- YOUR_VERCEL_DEPLOYMENT_URL: Your Vercel deployment URL
-- YOUR_VIDEO_DEMO_LINK: Your YouTube/Loom video link
-- YOUR_EMAIL: Your email address
-- YOUR_LINKEDIN_PROFILE: Your LinkedIn profile URL
--->
-
-[![Live Demo](https://img.shields.io/badge/Live-Demo-38bdf8?style=for-the-badge&logo=vercel)](https://unthinkable-solutions.vercel.app)
-[![Video Demo](https://img.shields.io/badge/Video-Demo-ec4899?style=for-the-badge&logo=youtube)](YOUR_VIDEO_DEMO_LINK)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/asneem1234/unthinkable-solutions)
-[![Architecture](https://img.shields.io/badge/View-Architecture-38bdf8?style=for-the-badge&logo=diagram)](https://unthinkable-solutions.vercel.app/architecture.html)
+[![Node.js](https://img.shields.io/badge/Runtime-Node.js_v18+-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org)
+[![Express.js](https://img.shields.io/badge/Framework-Express.js-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com)
+[![Qdrant](https://img.shields.io/badge/Vector_DB-Qdrant-24386C?style=for-the-badge&logo=qdrant&logoColor=white)](https://qdrant.tech)
+[![Google Gemini](https://img.shields.io/badge/AI-Gemini_2.0_Flash-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev)
+[![Vercel](https://img.shields.io/badge/Deploy-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com)
 
 **Placement Drive Assignment - Challenge #7**  
 **Unthinkable Solutions**
@@ -686,16 +679,6 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 If you found this project helpful or learned something new, please consider giving it a star! ⭐
 
 Your support helps others discover this work and motivates continued development.
-
----
-
-### Built With Cutting-Edge Technology
-
-[![Node.js](https://img.shields.io/badge/Runtime-Node.js_v18+-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org)
-[![Express.js](https://img.shields.io/badge/Framework-Express.js-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com)
-[![Qdrant](https://img.shields.io/badge/Vector_DB-Qdrant-24386C?style=for-the-badge&logo=qdrant&logoColor=white)](https://qdrant.tech)
-[![Google Gemini](https://img.shields.io/badge/AI-Gemini_2.0_Flash-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev)
-[![Vercel](https://img.shields.io/badge/Deploy-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com)
 
 ---
 
