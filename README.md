@@ -39,9 +39,8 @@
 
 **Complete Project Walkthrough**
 
-<!-- Replace YOUR_VIDEO_ID with your actual YouTube video ID -->
-<a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID">
-  <img src="https://img.youtube.com/vi/YOUR_VIDEO_ID/maxresdefault.jpg" alt="Video Demo" width="800">
+<a href="https://www.youtube.com/watch?v=alSaeGJMGzE">
+  <img src="https://img.youtube.com/vi/alSaeGJMGzE/maxresdefault.jpg" alt="Video Demo" width="800">
 </a>
 
 **Or watch embedded below:**
@@ -50,10 +49,10 @@
 
 <!-- Embedded YouTube Video -->
 ```
-https://www.youtube.com/embed/YOUR_VIDEO_ID
+https://www.youtube.com/embed/alSaeGJMGzE
 ```
 
-> **Note:** Replace `YOUR_VIDEO_ID` above with your actual YouTube video ID (e.g., if your URL is `https://youtu.be/dQw4w9WgXcQ`, the ID is `dQw4w9WgXcQ`)
+> **📺 Watch the complete demo showcasing document upload, semantic search, ReFRAG implementation, and real-time query answering**
 
 ---
 
